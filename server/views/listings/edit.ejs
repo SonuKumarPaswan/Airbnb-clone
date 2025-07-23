@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="listing[viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Listing</title>
+    <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: start;
+      height: 100vh;
+      padding: 20px;
+      
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      margin: 50px;
+      text-align: start;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+    <center>
+    <div class="form-container">
+    <form action="/listings/<%= listing._id %>?_method=PUT" method="POST">      <h2>Edit Listing</h2>
+
+      <label for="title">Title:</label>
+      <input type="text" id="title" name="listing[title]" required value=<%= listing.title %> />
+
+      <label for="description">Description:</label>
+      <textarea id="description" name="listing[description]" rows="3" > <%= listing.description %> </textarea>
+
+      <label for="image">Image URL:</label>
+      <input type="text" id="image" name="listing[image]"  />
+
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="listing[price]" required value=<%= listing.price %> />
+
+      <label for="location">Location:</label>
+      <input type="text" id="location" name="listing[location]" required value=<%= listing.location %> />
+
+      <label for="country">Country:</label>
+      <input type="text" id="country" name="listing[country]" required value=<%= listing.country %> />
+
+      <button type="submit">Create Listing</button>
+    </form>
+        
+  </div>
+    </center>
+
+</body>
+</html>
