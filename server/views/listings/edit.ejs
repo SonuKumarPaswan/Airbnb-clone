@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-8 offset-2 ">
         <h3>Edit your listing</h3>
-        <form action="/listings" method="POST" novalidate class="needs-validation"  >
+        <form action="/listings/<%= listing._id %>?_method=PUT" method="POST" novalidate class="needs-validation"  >
           <div class="mb-2">
             <label for="title" class="form-label">Title:</label>
             <input type="text" id="title" name="listing[title]" class="form-control" required  required value=<%= listing.title %> />

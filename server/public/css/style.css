@@ -42,7 +42,9 @@ body{
 .card{
     border: none !important;
     margin-bottom: 2rem;
-    
+}
+.card-review{
+    border: 1px solid rgb(235, 227, 217) !important;
 }
 .card-body{
     padding: 0 !important;
@@ -67,4 +69,5 @@ object-fit: cover;
 /* Show page */
 .show-img{
     width: 70%;
+    height: 400px;
 }
