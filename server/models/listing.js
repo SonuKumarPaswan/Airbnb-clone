@@ -9,9 +9,8 @@ const listingSchema= new Schema({
     },
     description:String,
     image:{
-        type:String,
-        default:"https://www.shutterstock.com/image-illustration/futuristic-scifi-battle-space-ships-600nw-1825476242.jpg",
-        set:(v)=> v === ""? "https://www.shutterstock.com/image-illustration/futuristic-scifi-battle-space-ships-600nw-1825476242.jpg":v,
+        url:String,
+        filename:String,
     },
     price:Number,
     location: String,
@@ -22,6 +21,10 @@ const listingSchema= new Schema({
         ref:"Review",
     }
     ],
+    owner:{
+        type:Schema.Types.ObjectId,
+        ref:"User",
+    }
 })
 
 listingSchema.post("findOneAndDelete",async(listing)=>{
