@@ -13,6 +13,7 @@ module.exports.isLoggedIn=(req,res,next)=>{
     next();
 }
 
+
 module.exports.saveRedirectUrl=(req,res,next)=>{
     if(req.session.redirectUrl){
         console.log(req.session.redirectUrl)
@@ -21,6 +22,7 @@ module.exports.saveRedirectUrl=(req,res,next)=>{
     }
     next();
 }
+
 
 module.exports.saveOwner= async(req,res,next)=>{
      let {id}=req.params;
